@@ -6,6 +6,7 @@ import { ReactComponent as GithubIcon } from "./assets/github.svg";
 import { ReactComponent as LinkedinIcon } from "./assets/linkedin.svg";
 
 function App() {
+  const currentYear = new Date().getFullYear();
   return (
     <>
       <div className="flex min-h-[calc(100vh-3.5rem)] justify-center">
@@ -16,7 +17,7 @@ function App() {
         </Routes>
       </div>
       <footer className="flex h-14 items-center justify-between bg-[#f6f6f6] px-4 text-gray-700 md:px-8">
-        © Alexander Requelme 2021
+        © {currentYear} Alexander Requelme
         <div className="inline-flex gap-4">
           <a
             href="https://github.com/AlexRequelme"
