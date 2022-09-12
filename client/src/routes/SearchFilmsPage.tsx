@@ -1,22 +1,36 @@
-import { ReactComponent as SearchIcon } from "../assets/search.svg";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
+import SearchBar from "../components/SearchBar";
+import { SearchForm } from "../types/search.type";
 
 export default function SearchFilmsPage() {
+  const navigate = useNavigate();
+  const { register, handleSubmit } = useForm<SearchForm>();
+
+  const handleSearch: SubmitHandler<SearchForm> = (data) => {
+    navigate({
+      pathname: "/items",
+      search: `?search=${data.query}&value=${data.value}`,
+    });
+  };
+
   return (
     <div className="flex flex-col items-center justify-center gap-8">
       <Header />
-      <div className="relative h-[46px] min-w-[320px] rounded-3xl border-2 border-gray-200 px-3 focus-within:border-blue-600 md:w-[584px]">
-        <div className="pointer-events-none absolute top-1/2 -translate-y-1/2 transform text-gray-400">
-          <SearchIcon className="h-5 w-5" />
-        </div>
-        <input
-          type="text"
-          className="h-full w-full appearance-none bg-transparent pl-8 text-base outline-none"
-        />
-      </div>
-      <button className="rounded bg-gray-500 px-8 py-2 text-white hover:bg-gray-600">
-        Search
-      </button>
+      <form
+        onSubmit={handleSubmit(handleSearch)}
+        autoComplete="off"
+        className="flex flex-col items-center justify-center gap-8"
+      >
+        <SearchBar register={register} />
+        <button
+          type="submit"
+          className="rounded bg-gray-500 px-8 py-2 text-white hover:bg-gray-600"
+        >
+          Search
+        </button>
+      </form>
     </div>
   );
 }

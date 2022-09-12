@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import DetailsFilmsPage from "./routes/DetailsFilmsPage";
 import ListFilmsPage from "./routes/ListFilmsPage";
@@ -14,6 +14,7 @@ function App() {
             <Route index element={<ListFilmsPage />} />
             <Route path=":id" element={<DetailsFilmsPage />} />
           </Route>
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
       <Footer />

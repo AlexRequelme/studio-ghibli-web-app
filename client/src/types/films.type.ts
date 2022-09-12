@@ -1,11 +1,11 @@
 export type Films = {
   id: string;
-  img: string;
-  originalTitle: string;
   title: string;
+  original_title_romanised: string;
+  image: string;
   description: string;
   director: string;
   producer: string;
-  releaseDate: string;
-  rtScore: string;
+  release_date: string;
+  rt_score: string;
 };
