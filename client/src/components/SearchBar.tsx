@@ -8,10 +8,10 @@ type SearchBarProps = {
 
 export default function SearchBar({ register }: SearchBarProps) {
   return (
-    <div className="relative h-[46px] min-w-[320px] rounded-3xl border-2 border-gray-200 pr-12 focus-within:border-blue-500 md:w-[584px]">
+    <div className="relative h-[46px] w-[300px] min-w-[288px] rounded-3xl border-2 border-gray-200 pr-12 focus-within:border-blue-500 md:w-[584px]">
       <select
         {...register("query", { required: true })}
-        className="absolute h-full w-max rounded-l-3xl border-r-8 border-r-transparent bg-gray-100 px-3"
+        className="absolute h-full w-28 rounded-l-3xl border-r-8 border-r-transparent bg-gray-100 px-3 text-sm md:w-max md:text-base"
         defaultValue="title"
       >
         <option value="title">Title</option>
@@ -24,7 +24,7 @@ export default function SearchBar({ register }: SearchBarProps) {
       <input
         type="text"
         {...register("value", { required: true })}
-        className="h-full w-full appearance-none bg-transparent pl-[136px] text-base outline-none"
+        className="h-full w-full appearance-none bg-transparent pl-[120px] text-base outline-none md:pl-[136px]"
       />
     </div>
   );

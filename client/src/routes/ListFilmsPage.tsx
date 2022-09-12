@@ -33,8 +33,8 @@ export default function ListFilmsPage() {
     <div className="flex flex-col items-center justify-center p-4">
       <Header goBackTo="/" />
       <h1 className="mt-4 self-start text-2xl font-semibold">List of Films</h1>
-      <div className="mt-2 flex w-[1024px] flex-col gap-4">
-        <div className="flex items-center justify-between">
+      <div className="mt-2 flex w-full flex-col gap-4 md:w-[1024px]">
+        <div className="sticky top-0 z-50 flex items-center justify-between bg-white py-4 md:p-0">
           <h2 className="text-base font-semibold">Results ({films.length})</h2>
           <PaginationBar
             step={step}
@@ -47,7 +47,7 @@ export default function ListFilmsPage() {
           className="flex h-[360px] w-full items-center justify-center"
         >
           {films.length > 0 ? (
-            <FilmsGrid films={films} scrollValue={380 * (step - 1)} />
+            <FilmsGrid films={films} scrollValue={step - 1} />
           ) : (
             <div className="flex h-[360px] w-full items-center justify-center">
               <p className="text-xl font-medium italic text-gray-400">

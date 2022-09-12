@@ -10,7 +10,7 @@ export default function Header({ goBackTo }: HeaderProps) {
       {goBackTo && (
         <Link
           to={goBackTo}
-          className="inline-flex items-center gap-2 self-start"
+          className="mb-4 inline-flex items-center gap-2 self-start md:mb-0"
         >
           <LeftArrowIcon className="h-6 w-6" />
           <span className="mb-0.5 text-base">Back to Login</span>

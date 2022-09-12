@@ -29,8 +29,8 @@ export default function DetailsFilmsPage() {
   return (
     <div className="flex flex-col items-center justify-center p-4">
       <Header goBackTo="/" />
-      <h1 className="mt-4 self-start text-2xl font-semibold">Details</h1>
-      <div className="mt-4 flex w-[1024px] flex-col gap-4">
+      <h1 className="mt-4 text-2xl font-semibold md:self-start">Details</h1>
+      <div className="mt-4 flex w-full flex-col gap-4 md:w-[1024px]">
         <SwitchLoading
           isLoading={isLoading}
           className="flex h-[360px] w-full items-center justify-center"
